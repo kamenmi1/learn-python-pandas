@@ -31,5 +31,17 @@ data['New Salary'] = data['New Salary'].astype("int")
 sorted_df = data.sort_values(by='Salary Increase', ascending=False)
 print(sorted_df)
 
-# 6.Export the updated DataFrame to a new CSV file.
+# 6.Count the number of employees in each department
+employee_count_per_department = data['Department'].value_counts()
+print(f"Employee Count per Department: \n{employee_count_per_department}")
+
+# 7.Filter the data for employees in the Finance department
+finance_employees = data[data['Department'] == 'Finance']
+print(f"Finance Employees: \n {finance_employees}")
+
+# 8.Find the employee with the highest salary and all details
+highest_salary_person = data.loc[data['Salary'].idxmax()]
+print(f"Employee with Highest Salary: \n{highest_salary_person}")
+
+# 9.Export the updated DataFrame to a new CSV file.
 data.to_csv('./csv_files/updated_data.csv', index=False)
