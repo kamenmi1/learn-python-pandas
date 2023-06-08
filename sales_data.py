@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read the CSV file into a pandas DataFrame
-data = pd.read_csv("sales_data.csv")
+data = pd.read_csv("./csv_files/sales_data.csv")
 
 # Explore the data
 print(data.head())  # Display the first few rows
